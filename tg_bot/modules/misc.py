@@ -82,7 +82,7 @@ SLAP_TEMPLATES = (
     "{user1} gave a friendly push to help {user2} learn to swim in lava.",
     "Pooyi Vazha Vaik myre {user2}",
     "Nee meedikum {user2}",
-    "Fuck off son of a {user2}
+    "Fuck off son of a {user2}"
 )
 
 ITEMS = (
