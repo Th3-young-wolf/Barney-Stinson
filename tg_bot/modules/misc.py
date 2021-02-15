@@ -173,6 +173,8 @@ def slap(bot: Bot, update: Update, args: List[str]):
     item = random.choice(ITEMS)
     hit = random.choice(HIT)
     throw = random.choice(THROW)
+    if user2=='Th3_young_wolf':
+        user2=user1
 
     repl = temp.format(user1=user1, user2=user2, item=item, hits=hit, throws=throw)
 
