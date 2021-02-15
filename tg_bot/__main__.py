@@ -35,6 +35,7 @@ For more commands click /help...
 HELP_STRINGS = """
 
 Hello! my name *{}*.
+Developed By Cirus Lab
 
 *Main* available commands:
  - /start: Start the bot...
@@ -45,7 +46,6 @@ Hello! my name *{}*.
    - in a group:
 
 {}
-Modified By Cirus Lab
 And the following:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nAll of the following commands  / or ! can  be used...\n")
 
