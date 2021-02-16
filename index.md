@@ -19,11 +19,11 @@ Cirus Lab
 ### AI and Web Development
 
 - Non profit community
-- Formed By Bharath Krishnan
+- Formed By Bharath Krishna
 -
 #Senior Developers
 1. Adithya Krishnan. Th3-young-wolf Github/ Insta
-2. Bharath Krishan. Th3_nuclear_rebel Insta
+2. Bharath Krisha. Th3_nuclear_rebel Insta
 
 ```
 
