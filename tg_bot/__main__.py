@@ -21,7 +21,7 @@ PM_START_TEXT = """
 hoi {}, my name is {}! if you have any questions about how to use me please give me /help... 
 
 im a group manager bot maintained by  [this person](tg://user?id={}).
-Created By Cirus Lab
+Created By Cirus Lab By Adithya Krishnan @Th3-young-wolf ln [Github](https://github.com/Th3-young-wolf/)
 
 
 This is my [Deploy Code](https://heroku.com/deploy?template=https://github.com/Th3-young-wolf/Barney-Stinson),
@@ -36,7 +36,7 @@ For more commands click /help...
 HELP_STRINGS = """
 
 Hello! my name *{}*.
-Developed By Cirus Lab
+Developed By Cirus Lab @ Th3 Young Wolf
 
 *Main* available commands:
  - /start: Start the bot...
