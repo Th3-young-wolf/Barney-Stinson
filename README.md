@@ -1,4 +1,4 @@
-## Joey Tribbiani V2 Bot
+## Joey Tribbiani V.2 Bot
 
 An Enhanced Telegram Grp Management Bot By Cirus Lab
 
