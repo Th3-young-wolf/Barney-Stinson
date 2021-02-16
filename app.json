@@ -1,7 +1,7 @@
 
 {
-  "name": "Marie-2.0 English",
-  "description": "Telegram's sassiest group manager. Modular Telegram group management bot!",
+  "name": "Joey Tribbiani English",
+  "description": "Telegram's coolest group manager. Modular Telegram group management bot!",
   "keywords": [
     "telegram",
     "best",
@@ -9,7 +9,7 @@
     "manager",
     "3"
   ],
-  "repository": "hhttps://github.com/TGExplore/Marie-2.0-English",
+  "repository": "hhttps://github.com/Th3-young-wolf/Joey-Tribbiani/",
   "env": {
     "ENV": {
       "description": "Setting this to ANYTHING will enable env variables",
@@ -21,11 +21,11 @@
     },
     "OWNER_ID": {
       "description": "An integer of consisting of your owner ID",
-      "value": "683538773"
+      "value": ""
     },
     "OWNER_USERNAME": {
       "description": "Your username",
-      "value": "ViruZs"
+      "value": "Th3_young_wolf"
     },
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode messages",
@@ -53,7 +53,7 @@
     },
     "DONATION_LINK": {
       "description": "Optional: link where you would like to receive donations.",
-      "value": "https://www.paypal.me/Your_id_here"
+      "value": "https://github.com/Th3-young-wolf/"
     },
     "PORT": {
       "description": "Port to use for your webhooks",
