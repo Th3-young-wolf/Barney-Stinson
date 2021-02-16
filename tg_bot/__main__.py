@@ -24,7 +24,7 @@ im a group manager bot maintained by  [this person](tg://user?id={}).
 Created By Cirus Lab By Adithya Krishnan @Th3-young-wolf ln [Github](https://github.com/Th3-young-wolf/)
 
 
-This is my [Deploy Code](https://heroku.com/deploy?template=https://github.com/Th3-young-wolf/Barney-Stinson),
+This is my [Deploy Code](https://heroku.com/deploy?template=https://github.com/Th3-young-wolf/Joey-Tribbiani),
 you can create clone same like me..
 
 For more commands click /help...
