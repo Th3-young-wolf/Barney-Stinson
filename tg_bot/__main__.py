@@ -21,6 +21,7 @@ PM_START_TEXT = """
 hoi {}, my name is {}! if you have any questions about how to use me please give me /help... 
 
 im a group manager bot maintained by  [this person](tg://user?id={}).
+Created By Cirus Lab
 
 
 This is my [Deploy Code](https://heroku.com/deploy?template=https://github.com/Th3-young-wolf/Barney-Stinson),
