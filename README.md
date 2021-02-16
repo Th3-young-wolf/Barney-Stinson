@@ -1,4 +1,4 @@
-## Barney Stinson Bot
+## Joey Tribbiani V2 Bot
 
 An Enhanced Telegram Grp Management Bot By Cirus Lab
 
