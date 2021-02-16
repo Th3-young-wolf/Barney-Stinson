@@ -11,6 +11,10 @@ Github : CIRUS LAB @ Th3-young-wolf
 This code is modified version of marie bot which has been taken down
 I would like to thank the developers if marie bot ,as it's the skeleton of this Bot
 
+## You can also tap the Deploy To Heroku button below to deploy straight to Heroku!
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Th3-young-wolf/Barney-Stinson)
+
 ```markdown
 Cirus Lab
 
