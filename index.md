@@ -1,32 +1,33 @@
-## Welcome to GitHub Pages
+## Barney Stinson Bot
 
-You can use the [editor on GitHub](https://github.com/Th3-young-wolf/Barney-Stinson/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+An Enhanced Telegram Grp Management Bot By Cirus Lab
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Note
+This is an GNU licenced Source Code , Editing or copying of this file must be with the consent of the Creator
+Github : CIRUS LAB @ Th3-young-wolf
 
-### Markdown
+### Contributors
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+This code is modified version of marie bot which has been taken down
+I would like to thank the developers if marie bot ,as it's the skeleton of this Bot
 
 ```markdown
-Syntax highlighted code block
+Cirus Lab
 
-# Header 1
-## Header 2
-### Header 3
+# Python Programming
+## Android Development
+### AI and Web Development
 
-- Bulleted
-- List
+- Non profit community
+- Formed By Bharath Krishnan
+-
+#Senior Developers
+1. Adithya Krishnan. Th3-young-wolf Github/ Insta
+2. Bharath Krishan. Th3_nuclear_rebel Insta
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+For more details see [Th3-young-wolf](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
