@@ -17,7 +17,6 @@ rep="""{title}
       Genres:{genre}
       Synopsis:{sym}
       Rating: {rate}
-      Episode No: {rep}
       URL: {url}"""
 
 @run_async
