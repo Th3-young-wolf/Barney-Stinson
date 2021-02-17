@@ -10,7 +10,7 @@ Github : CIRUS LAB @ Th3-young-wolf
 
 This code is modified version of marie bot which has been taken down.
 
-I would like to thank the developers if marie bot ,as it's the skeleton of this Bot
+I would like to thank the developers of marie bot ,as it's the skeleton of this Bot
 
 ## You can also tap the Deploy To Heroku button below to deploy straight to Heroku!
 
