@@ -60,7 +60,7 @@ def anime(bot: Bot, update: Update, args: List[int]):
         sym=search.results[0].synopsis
         rate=search.results[0].score
         url=search.results[0].url
-        rep1=rep.format(title=title,genre=genre,sym=sym,rate=rate,url=url)
+        rep1 = rep.format(title=title, genre=genre, sym=sym, rate=rate, url=url)
         update.effective_message.reply_text(rep1)
     else:
         update.effective_message.reply_text("Somethig wrong")
