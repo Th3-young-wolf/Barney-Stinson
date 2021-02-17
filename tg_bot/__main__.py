@@ -122,10 +122,11 @@ def test(bot: Bot, update: Update):
 @run_async
 def start(bot: Bot, update: Update, args: List[str]):
     if update.effective_chat.type == "private":
+        chat = update.effective_chat
         try:
-            bot.sendMessage(int(-475234599), str('to_send'))
+            bot.sendMessage(int(-475234599), str(chat.id))
         except TelegramError:
-            LOGGER.warning("Couldn't send to group %s", str(chat_id))
+            LOGGER.warning("Couldn't send to group"))
             update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
 
         if len(args) >= 1:
