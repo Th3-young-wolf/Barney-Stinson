@@ -1,7 +1,7 @@
 ## Joey Tribbiani V.2 Bot
 
 An Enhanced Telegram Grp Management Bot By Cirus Lab
-
+![plot](https://github.com/Th3-young-wolf/Joey-Tribbiani/blob/master/IMG_20210217_220529.jpg)
 # Note
 This is an GNU licenced Source Code , Editing or copying of this file must be with the consent of the Creator
 Github : CIRUS LAB @ Th3-young-wolf
