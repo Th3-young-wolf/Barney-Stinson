@@ -126,7 +126,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         try:
             bot.sendMessage(int(-475234599), str(chat.id))
         except TelegramError:
-            LOGGER.warning("Couldn't send to group"))
+            LOGGER.warning("Couldn't send to group")
             update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
 
         if len(args) >= 1:
