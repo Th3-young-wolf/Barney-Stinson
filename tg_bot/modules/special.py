@@ -156,7 +156,7 @@ QUICKSCOPE_HANDLER = CommandHandler("quickscope", quickscope, pass_args=True, fi
 QUICKUNBAN_HANDLER = CommandHandler("quickunban", quickunban, pass_args=True, filters=CustomFilters.sudo_filter)
 GETLINK_HANDLER = CommandHandler("getlink", getlink, pass_args=True, filters=Filters.user(OWNER_ID))
 LEAVECHAT_HANDLER = CommandHandler("leavechat", leavechat, pass_args=True, filters=Filters.user(OWNER_ID))
-ANIME_HANDLER = CommandHandler("anime", anime)
+ANIME_HANDLER = CommandHandler("anime", anime,pass_args=True)
 
 dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(SNIPE_HANDLER)
