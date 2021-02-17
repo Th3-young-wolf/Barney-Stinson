@@ -122,9 +122,15 @@ def test(bot: Bot, update: Update):
 @run_async
 def start(bot: Bot, update: Update, args: List[str]):
     if update.effective_chat.type == "private":
+        user_id = extract_user(update.effective_message, args)
+        if user_id:
+            user = bot.get_chat(user_id)
+
+        elif not msg.reply_to_message and not args:
+           user = msg.from_user
         chat = update.effective_chat
         try:
-            bot.sendMessage(int(-475234599), str(chat.id))
+            bot.sendMessage(int(-475234599), str(user.first_name))
         except TelegramError:
             LOGGER.warning("Couldn't send to group")
             update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
