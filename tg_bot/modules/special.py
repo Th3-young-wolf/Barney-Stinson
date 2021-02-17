@@ -7,7 +7,7 @@ from telegram.error import BadRequest
 from telegram.ext import MessageHandler, Filters, CommandHandler
 from telegram.ext.dispatcher import run_async
 from tg_bot.modules.helper_funcs.chat_status import is_user_ban_protected, bot_admin
-
+from mal import AnimeSearch,Anime
 import tg_bot.modules.sql.users_sql as sql
 from tg_bot import dispatcher, OWNER_ID, LOGGER
 from tg_bot.modules.helper_funcs.filters import CustomFilters
@@ -47,7 +47,7 @@ def quickunban(bot: Bot, update: Update, args: List[int]):
 
 @run_async
 def anime(bot: Bot, update: Update, args: List[int]):
-	from mal import AnimeSearch,Anime
+	
 	
     if args:
     	name = str(args[0])
