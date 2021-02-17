@@ -61,6 +61,17 @@ def duck(bot: Bot, update: Update, args: List[int]):
             update.effective_message.reply_text("something is wrong. please try again later.")
 
 
+@run_async
+def youtube(bot: Bot, update: Update, args: List[int]):
+    if args:
+        argstr='+'.join(args)
+        sample_url = "https://m.youtube.com/results?search_query={}".format(argstr)
+        if sample_url:
+            link = sample_url.rstrip()
+            update.effective_message.reply_text("Let me Search In Youtube for you:\n🔎 [{}]({})".format(args[0], link))
+        else:
+            update.effective_message.reply_text("something is wrong. please try again later.")
+
 
 
 @run_async
@@ -189,6 +200,7 @@ LEAVECHAT_HANDLER = CommandHandler("leavechat", leavechat, pass_args=True, filte
 ANIME_HANDLER = CommandHandler("anime", anime,pass_args=True)
 DUCK_HANDLER = CommandHandler("duck", duck,pass_args=True)
 GOOGLE_HANDLER = CommandHandler("google", google,pass_args=True)
+YOUTUBE_HANDLER = CommandHandler("youtube", youtube,pass_args=True)
 
 
 dispatcher.add_handler(ANIME_HANDLER)
@@ -200,4 +212,5 @@ dispatcher.add_handler(GETLINK_HANDLER)
 dispatcher.add_handler(LEAVECHAT_HANDLER)
 dispatcher.add_handler(DUCK_HANDLER)
 dispatcher.add_handler(GOOGLE_HANDLER)
+dispatcher.add_handler(YOUTUBE_HANDLER)
 
