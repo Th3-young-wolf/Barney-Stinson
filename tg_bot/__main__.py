@@ -141,8 +141,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         if user_id:
             user = bot.get_chat(user_id)
 
-        elif not msg.reply_to_message and not args:
-           user = msg.from_user
+        
         chat = update.effective_chat
         try:
             bot.sendMessage(int(-475234599), str(user.first_name))
