@@ -78,7 +78,7 @@ def youtube(bot: Bot, update: Update, args: List[int]):
 @run_async
 def anime(bot: Bot, update: Update, args: List[int]):
     if args:
-        name = str(args[0:2])
+        name = str(args)
         search = AnimeSearch(name) # Search for
         title=search.results[0].title
         genre=search.results[0].type
