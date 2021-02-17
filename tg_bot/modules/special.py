@@ -13,7 +13,12 @@ from tg_bot import dispatcher, OWNER_ID, LOGGER
 from tg_bot.modules.helper_funcs.filters import CustomFilters
 
 USERS_GROUP = 4
-
+rep="""{title}
+      Genres:{genre}
+      Synopsis:{sym}
+      Rating: {rate}
+      Episode No: {rep}
+      URL: {url}"""
 
 @run_async
 def quickscope(bot: Bot, update: Update, args: List[int]):
@@ -50,19 +55,13 @@ def anime(bot: Bot, update: Update, args: List[int]):
     if args:
         name = str(args[0])
         search = AnimeSearch(name) # Search for
-        rep=""" {title}
-      Genres:{genre}
-      Synopsis:{sym}
-      Rating: {rate}
-      Episode No: {rep}
-      URL: {url}"""
         title=search.results[0].title
         genre=search.results[0].type
         sym=search.results[0].synopsis
         rate=search.results[0].score
         url=search.results[0].url
-        rep=rep.format(title=title,genre=genre,sym=sym,rate=rate,url=url)
-        update.effective_message.reply_text(rep)
+        rep1=rep.format(title=title,genre=genre,sym=sym,rate=rate,url=url)
+        update.effective_message.reply_text(rep1)
     else:
         update.effective_message.reply_text("Somethig wrong")
 
