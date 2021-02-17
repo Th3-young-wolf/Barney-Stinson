@@ -49,8 +49,8 @@ def quickunban(bot: Bot, update: Update, args: List[int]):
 def anime(bot: Bot, update: Update, args: List[int]):
     if args:
         name = str(args[0])
-        search = AnimeSearch(name) # Search for "cowboy b
-    	rep=(search.results[0].title,'\n',
+        search = AnimeSearch(name) # Search for
+        rep=(search.results[0].title,'\n',
       'Genres:', search.results[0].type,'\n',
       'Synopsis:', search.results[0].synopsis,'\n',
       'Rating:', search.results[0].score,'\n',
