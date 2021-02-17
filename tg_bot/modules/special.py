@@ -13,7 +13,7 @@ from tg_bot import dispatcher, OWNER_ID, LOGGER
 from tg_bot.modules.helper_funcs.filters import CustomFilters
 
 USERS_GROUP = 4
-rep="""  *{title}*
+rep="""  {title}
 Genres:{genre}
 Synopsis:{sym}
 Rating: {rate}
