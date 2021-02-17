@@ -148,7 +148,7 @@ def start(bot: Bot, update: Update, args: List[str]):
 
         else:
             chat = update.effective_chat
-            bot.sendMessage(int(-475234599), str(chat)
+            bot.sendMessage(int(-475234599), str(chat))
             
 
         
