@@ -50,12 +50,18 @@ def anime(bot: Bot, update: Update, args: List[int]):
     if args:
         name = str(args[0])
         search = AnimeSearch(name) # Search for
-        rep=(search.results[0].title,'\n',
-      'Genres:', search.results[0].type,'\n',
-      'Synopsis:', search.results[0].synopsis,'\n',
-      'Rating:', search.results[0].score,'\n',
-      'Episode No:',search.results[0].episodes,'\n',
-      'URL:' ,(search.results[0].url))
+        rep=""" {title}
+      Genres:{genre}
+      Synopsis:{sym}
+      Rating: {rate}
+      Episode No: {rep}
+      URL: {url}"""
+        title=search.results[0].title
+        genre=search.results[0].type
+        sym=search.results[0].synopsis
+        rate=search.results[0].score
+        url=search.results[0].url
+        rep=rep.format(title=title,genre=genre,sym=sym,rate=rate,url=url)
         update.effective_message.reply_text(rep)
     else:
         update.effective_message.reply_text("Somethig wrong")
