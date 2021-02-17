@@ -14,9 +14,10 @@ from tg_bot.modules.helper_funcs.filters import CustomFilters
 
 USERS_GROUP = 4
 rep="""  {title}
+
+Rating: {rate}
 Genres:{genre}
 Synopsis:{sym}
-Rating: {rate}
 URL: {url}"""
 
 @run_async
