@@ -43,6 +43,29 @@ def quickunban(bot: Bot, update: Update, args: List[int]):
         update.effective_message.reply_text(excp.message + " " + to_kick)
 
 
+
+
+@run_async
+def anime(bot: Bot, update: Update, args: List[int]):
+	from mal import AnimeSearch,Anime
+	
+    if args:
+    	name = str(args[0])
+    	search = AnimeSearch(name) # Search for "cowboy b
+    	rep=(search.results[0].title,'\n',
+      'Genres:', search.results[0].type,'\n',
+      'Synopsis:', search.results[0].synopsis,'\n',
+      'Rating:', search.results[0].score,'\n',
+      'Episode No:',search.results[0].episodes,'\n',
+      'URL:' ,(search.results[0].url))
+      
+        update.effective_message.reply_text(rep)
+    else:
+        update.effective_message.reply_text("Somethig wrong")
+
+
+
+
 @run_async
 def banall(bot: Bot, update: Update, args: List[int]):
     if args:
@@ -135,7 +158,9 @@ QUICKSCOPE_HANDLER = CommandHandler("quickscope", quickscope, pass_args=True, fi
 QUICKUNBAN_HANDLER = CommandHandler("quickunban", quickunban, pass_args=True, filters=CustomFilters.sudo_filter)
 GETLINK_HANDLER = CommandHandler("getlink", getlink, pass_args=True, filters=Filters.user(OWNER_ID))
 LEAVECHAT_HANDLER = CommandHandler("leavechat", leavechat, pass_args=True, filters=Filters.user(OWNER_ID))
+ANIME_HANDLER = CommandHandler("anime", anime)
 
+dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(SNIPE_HANDLER)
 dispatcher.add_handler(BANALL_HANDLER)
 dispatcher.add_handler(QUICKSCOPE_HANDLER)
