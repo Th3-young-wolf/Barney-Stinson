@@ -149,7 +149,7 @@ __help__ = """
 - /Ungmute : Ungmute a user
 Sudo/owner can use these commands too.
 **Users:**
-- /anime Search Animes (On Development)
+- /anime Search Animes
 - /listsudo Gives a list of sudo users
 - /listsupport gives a list of support users
 """
