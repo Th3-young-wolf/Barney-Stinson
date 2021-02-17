@@ -56,7 +56,7 @@ def duck(bot: Bot, update: Update, args: List[int]):
         sample_url = "https://duckduckgo.com/?q={}".format(argstr)
         if sample_url:
             link = sample_url.rstrip()
-            update.effective_message.reply_text("Let me 🦆 DuckDuckGo that for you:\n🔎 [{}]({})".format(args, link))
+            update.effective_message.reply_text("Let me 🦆 DuckDuckGo that for you:\n🔎 [{}]({})".format(args[0], link))
         else:
             update.effective_message.reply_text("something is wrong. please try again later.")
 
@@ -77,6 +77,18 @@ def anime(bot: Bot, update: Update, args: List[int]):
         update.effective_message.reply_text(rep1)
     else:
         update.effective_message.reply_text("Somethig wrong")
+
+
+@run_async
+def google(bot: Bot, update: Update, args: List[int]):
+    if args:
+        argstr='+'.join(args)
+        sample_url = "https://google.com/search?q={}".format(argstr)
+        if sample_url:
+            link = sample_url.rstrip()
+            update.effective_message.reply_text("Let me google that for you:\n🔎 [{}]({})".format(args[0], link))
+        else:
+            update.effective_message.reply_text("something is wrong. please try again later.")
 
 
 
@@ -176,6 +188,9 @@ GETLINK_HANDLER = CommandHandler("getlink", getlink, pass_args=True, filters=Fil
 LEAVECHAT_HANDLER = CommandHandler("leavechat", leavechat, pass_args=True, filters=Filters.user(OWNER_ID))
 ANIME_HANDLER = CommandHandler("anime", anime,pass_args=True)
 DUCK_HANDLER = CommandHandler("duck", duck,pass_args=True)
+GOOGLE_HANDLER = CommandHandler("google", google,pass_args=True)
+
+
 dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(SNIPE_HANDLER)
 dispatcher.add_handler(BANALL_HANDLER)
@@ -184,4 +199,5 @@ dispatcher.add_handler(QUICKUNBAN_HANDLER)
 dispatcher.add_handler(GETLINK_HANDLER)
 dispatcher.add_handler(LEAVECHAT_HANDLER)
 dispatcher.add_handler(DUCK_HANDLER)
+dispatcher.add_handler(GOOGLE_HANDLER)
 
