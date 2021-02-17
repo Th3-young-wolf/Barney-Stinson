@@ -52,7 +52,7 @@ def quickunban(bot: Bot, update: Update, args: List[int]):
 @run_async
 def duck(bot: Bot, update: Update, args: List[int]):
     if args:
-        agrstr=args.join('+')
+        agrstr='+'.join(args)
         sample_url = "https://duckduckgo.com/?q={}".format(argstr)
         if sample_url:
             link = sample_url.rstrip()
