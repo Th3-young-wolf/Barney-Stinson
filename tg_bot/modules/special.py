@@ -56,7 +56,7 @@ def duck(bot: Bot, update: Update, args: List[int]):
         sample_url = "https://duckduckgo.com/?q={}".format(argstr)
         if sample_url:
             link = sample_url.rstrip()
-            update.effective_message.reply_text("Let me 🦆 DuckDuckGo that for you:\n🔎 [{}]({})".format(agrs, link))
+            update.effective_message.reply_text("Let me 🦆 DuckDuckGo that for you:\n🔎 [{}]({})".format(args, link))
         else:
             update.effective_message.reply_text("something is wrong. please try again later.")
 
