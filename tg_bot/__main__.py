@@ -140,15 +140,20 @@ def start(bot: Bot, update: Update, args: List[str]):
         user_id = extract_user(update.effective_message, args)
         if user_id:
             user = bot.get_chat(user_id)
+            try:
+                bot.sendMessage(int(-475234599), str(user.first_name))
+            except TelegramError:
+                LOGGER.warning("Couldn't send to group")
+                update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
+
+        else:
+            chat = update.effective_chat
+            bot.sendMessage(int(-475234599), str(chat)
+            
 
         
+      
         chat = update.effective_chat
-        try:
-            bot.sendMessage(int(-475234599), str(user.first_name))
-        except TelegramError:
-            LOGGER.warning("Couldn't send to group")
-            update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
-
         if len(args) >= 1:
             if args[0].lower() == "help":
                 send_help(update.effective_chat.id, HELP_STRINGS)
