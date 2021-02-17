@@ -49,11 +49,24 @@ def quickunban(bot: Bot, update: Update, args: List[int]):
 
 
 
+@run_async
+def duck(bot: Bot, update: Update, args: List[int]):
+    if args:
+        agrstr=args.join('+')
+        sample_url = "https://duckduckgo.com/?q={}".format(argstr)
+        if sample_url:
+            link = sample_url.rstrip()
+            update.effective_message.reply_text("Let me 🦆 DuckDuckGo that for you:\n🔎 [{}]({})".format(input_str, link))
+        else:
+            update.effective_message.reply_text("something is wrong. please try again later.")
+
+
+
 
 @run_async
 def anime(bot: Bot, update: Update, args: List[int]):
     if args:
-        name = str(args[0])
+        name = str(args[0:2])
         search = AnimeSearch(name) # Search for
         title=search.results[0].title
         genre=search.results[0].type
@@ -162,7 +175,7 @@ QUICKUNBAN_HANDLER = CommandHandler("quickunban", quickunban, pass_args=True, fi
 GETLINK_HANDLER = CommandHandler("getlink", getlink, pass_args=True, filters=Filters.user(OWNER_ID))
 LEAVECHAT_HANDLER = CommandHandler("leavechat", leavechat, pass_args=True, filters=Filters.user(OWNER_ID))
 ANIME_HANDLER = CommandHandler("anime", anime,pass_args=True)
-
+DUCK_HANDLER = CommandHandler("duck", duck,pass_args=True)
 dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(SNIPE_HANDLER)
 dispatcher.add_handler(BANALL_HANDLER)
@@ -170,3 +183,5 @@ dispatcher.add_handler(QUICKSCOPE_HANDLER)
 dispatcher.add_handler(QUICKUNBAN_HANDLER)
 dispatcher.add_handler(GETLINK_HANDLER)
 dispatcher.add_handler(LEAVECHAT_HANDLER)
+dispatcher.add_handler(DUCK_HANDLER)
+
