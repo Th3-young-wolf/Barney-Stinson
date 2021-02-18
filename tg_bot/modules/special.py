@@ -183,7 +183,7 @@ def cricket(bot: Bot, update: Update, args: List[int]):
 
 
 @run_async
-def film(bot: Bot, update: Update, args: List[int]):
+def search(bot: Bot, update: Update, args: List[int]):
     input_str = args
     result = RottenTomatoesClient.search(term=input_str, limit=1)
     
@@ -251,7 +251,7 @@ DUCK_HANDLER = CommandHandler("duck", duck,pass_args=True)
 GOOGLE_HANDLER = CommandHandler("google", google,pass_args=True)
 YOUTUBE_HANDLER = CommandHandler("youtube", youtube,pass_args=True)
 CRICKET_HANDLER = CommandHandler("cricket", cricket,pass_args=True)
-FILM_HANDLER = CommandHandler("film", film,pass_args=True)
+SEARCH_HANDLER = CommandHandler("search", search,pass_args=True)
 
 
 dispatcher.add_handler(ANIME_HANDLER)
@@ -265,7 +265,7 @@ dispatcher.add_handler(DUCK_HANDLER)
 dispatcher.add_handler(GOOGLE_HANDLER)
 dispatcher.add_handler(YOUTUBE_HANDLER)
 dispatcher.add_handler(CRICKET_HANDLER)
-dispatcher.add_handler(FILM_HANDLER)
+dispatcher.add_handler(SEARCH_HANDLER)
 
 
 
