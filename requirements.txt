@@ -20,3 +20,4 @@ telegraph
 mal
 mal-api
 telethon
+rotten_tomatoes_client
