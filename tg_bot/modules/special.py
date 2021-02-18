@@ -218,7 +218,7 @@ Cast :
 def imdb(bot: Bot, update: Update, args: List[int]):
     try:
         movie_name =args
-        remove_space = movie_name.split(" ")
+        remove_space = movie_name.remove(' ')
         final_name = "+".join(remove_space)
         page = requests.get(
             "https://www.imdb.com/find?ref_=nv_sr_fn&q=" + final_name + "&s=all"
