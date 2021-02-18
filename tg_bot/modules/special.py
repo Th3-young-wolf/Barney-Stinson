@@ -208,7 +208,10 @@ Meter Class : {Classe}
 Meter Score : {Meter}
 Cast : 
 {cast}"""
-    update.effective_message.reply_text(caption)
+    try:
+        update.effective_message.reply_text(caption)
+    except:
+        update.effective_message.reply_text('This Feature won't work in private chats and grps')
     
     
 
