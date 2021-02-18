@@ -104,7 +104,7 @@ def google(bot: Bot, update: Update, args: List[int]):
 
 
 @run_async
-async def hack(event):
+async def hack(event,args):
     if event.fwd_from:
         return
     animation_interval = 2
