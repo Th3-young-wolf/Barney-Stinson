@@ -17,16 +17,17 @@ I would like to thank the developers of marie bot ,as it's the skeleton of this 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Th3-young-wolf/Joey-Tribbiani)
 
 # Extra Features Cirus Lab Special
-'''markdown
+```markdown
 /search - For Searching movies/series/anime via imdb and getting results
 /google - Google search via bot
 /anime - anime search via bot
 /duck - private search via duckduckgo
 /cricket - live cricket score
-'''
+```
 
-```markdown
-     Cirus Lab
+## Cirus Lab
+
+```markdown   
 
 # Python Programming
 ## Android Development
