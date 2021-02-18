@@ -211,7 +211,7 @@ Cast :
     try:
         update.effective_message.reply_text(caption)
     except:
-        update.effective_message.reply_text('This Feature won't work in private chats and grps')
+        update.effective_message.reply_text("This Feature won't work in private chats and grps")
     
     
 
