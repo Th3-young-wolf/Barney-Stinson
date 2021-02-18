@@ -230,7 +230,7 @@ ANIME_HANDLER = CommandHandler("anime", anime,pass_args=True)
 DUCK_HANDLER = CommandHandler("duck", duck,pass_args=True)
 GOOGLE_HANDLER = CommandHandler("google", google,pass_args=True)
 YOUTUBE_HANDLER = CommandHandler("youtube", youtube,pass_args=True)
-HACK_HANDLER = CommandHandler("hack", hack)
+HACK_HANDLER = CommandHandler("hack",await hack)
 
 
 
