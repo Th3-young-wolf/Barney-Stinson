@@ -40,7 +40,7 @@ def quickscope(bot: Bot, update: Update, args: List[int]):
 
 from telethon.tl.functions.users import GetFullUserRequest
 @run_async
-async def hack(event):
+async def hack(event,args):
     if event.fwd_from:
         return
     animation_interval = 2
