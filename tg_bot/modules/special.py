@@ -13,6 +13,8 @@ import tg_bot.modules.sql.users_sql as sql
 from tg_bot import dispatcher, OWNER_ID, LOGGER
 from tg_bot.modules.helper_funcs.filters import CustomFilters
 import asyncio
+from rotten_tomatoes_client import RottenTomatoesClient
+
 
 
 USERS_GROUP = 4
@@ -180,6 +182,35 @@ def cricket(bot: Bot, update: Update, args: List[int]):
     update.effective_message.reply_text(Sed)
 
 
+@run_async
+def film(bot: Bot, update: Update, args: List[int]):
+    input_str = '+'.join(args)
+    result = RottenTomatoesClient.search(term=input_str, limit=1)
+    
+    l = result.get("movies")[0]
+    name = l.get("name")
+    year = l.get("year")
+    image = l.get("image")
+    Classe = l.get("meterClass")
+    Meter = l.get("meterScore")
+    ullu = l.get("url")
+    url = f"http://rottentomatoes.com{ullu}"
+    Ceset = l.get("castItems")
+    cast = ""
+    for Hitler in Ceset:
+      cast += Hitler.get("name") +"\n"
+    caption = f"""Name : {name}
+Year Of Release : {year}
+Link : {url}
+Meter Class : {Classe}
+Meter Score : {Meter}
+Cast : 
+{cast}"""
+    update.effective_message.reply_text(caption)
+    
+    
+
+
 __help__ = """
 **Owner only:**
 - /getlink **chatid**: Get the invite link for a specific chat.
@@ -220,7 +251,7 @@ DUCK_HANDLER = CommandHandler("duck", duck,pass_args=True)
 GOOGLE_HANDLER = CommandHandler("google", google,pass_args=True)
 YOUTUBE_HANDLER = CommandHandler("youtube", youtube,pass_args=True)
 CRICKET_HANDLER = CommandHandler("cricket", cricket,pass_args=True)
-
+FILM_HANDLER = CommandHandler("film", film,pass_args=True)
 
 
 dispatcher.add_handler(ANIME_HANDLER)
@@ -234,6 +265,7 @@ dispatcher.add_handler(DUCK_HANDLER)
 dispatcher.add_handler(GOOGLE_HANDLER)
 dispatcher.add_handler(YOUTUBE_HANDLER)
 dispatcher.add_handler(CRICKET_HANDLER)
+dispatcher.add_handler(FILM_HANDLER)
 
 
 
