@@ -12,6 +12,8 @@ from mal import AnimeSearch,Anime
 import tg_bot.modules.sql.users_sql as sql
 from tg_bot import dispatcher, OWNER_ID, LOGGER
 from tg_bot.modules.helper_funcs.filters import CustomFilters
+import asyncio
+
 
 USERS_GROUP = 4
 rep="""  ⚡⚡{title}⚡⚡
@@ -38,7 +40,6 @@ def quickscope(bot: Bot, update: Update, args: List[int]):
 
 
 @run_async
-import asyncio
 async def hack(event):
     if event.fwd_from:
         return
