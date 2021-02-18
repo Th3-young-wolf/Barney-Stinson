@@ -164,6 +164,22 @@ def leavechat(bot: Bot, update: Update, args: List[int]):
     else:
         update.effective_message.reply_text("You don't seem to be referring to a chat")
 
+import urllib.request
+
+from bs4 import BeautifulSoup
+@run_async
+
+def cricket(bot: Bot, update: Update, args: List[int]):
+    score_page = "http://static.cricinfo.com/rss/livescores.xml"
+    page = urllib.request.urlopen(score_page)
+    soup = BeautifulSoup(page, "html.parser")
+    result = soup.find_all("description")
+    Sed = ""
+    for match in result:
+        Sed += match.get_text() + "\n\n"
+    update.effective_message.reply_text(Sed)
+
+
 __help__ = """
 **Owner only:**
 - /getlink **chatid**: Get the invite link for a specific chat.
@@ -203,7 +219,7 @@ ANIME_HANDLER = CommandHandler("anime", anime,pass_args=True)
 DUCK_HANDLER = CommandHandler("duck", duck,pass_args=True)
 GOOGLE_HANDLER = CommandHandler("google", google,pass_args=True)
 YOUTUBE_HANDLER = CommandHandler("youtube", youtube,pass_args=True)
-
+CRICKET_HANDLER = CommandHandler("cricket", cricket,pass_args=True)
 
 
 
@@ -217,6 +233,7 @@ dispatcher.add_handler(LEAVECHAT_HANDLER)
 dispatcher.add_handler(DUCK_HANDLER)
 dispatcher.add_handler(GOOGLE_HANDLER)
 dispatcher.add_handler(YOUTUBE_HANDLER)
+dispatcher.add_handler(CRICKET_HANDLER)
 
 
 
