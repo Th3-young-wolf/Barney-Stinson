@@ -282,7 +282,7 @@ def imdb(bot: Bot, update: Update, args: List[int]):
         else:
             mov_rating = "Not available"
         rep1="""
-            ⚡⚡{mov_title} ⚡⚡
+            ⚡{mov_title}⚡
  
             Rating : {mov_rating}
             Url: {mov_link}
