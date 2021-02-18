@@ -256,7 +256,7 @@ Url: {mov_link}
         rep1=rep1.format(mov_title=mov_title,mov_rating=mov_rating,mov_link=mov_link)
         update.effective_message.reply_text(rep1)
     except IndexError:
-        update.effective_message.reply_text("Plox enter **Valid movie name** kthx")
+        update.effective_message.reply_text("Please enter a Valid movie name")
 
 
 
@@ -337,8 +337,7 @@ Url: {mov_link}
         rep1=rep1.format(mov_title=mov_title,mov_rating=mov_rating,mov_link=mov_link)
         update.effective_message.reply_text(rep1)
     except IndexError:
-        update.effective_message.reply_text("Plox enter **Valid movie name** kthx")
-
+        update.effective_message.reply_text("Please enter a Valid movie name")
 
 
 
