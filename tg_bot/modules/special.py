@@ -188,7 +188,7 @@ def search(bot: Bot, update: Update, args: List[int]):
     result = RottenTomatoesClient.search(term=input_str, limit=1)
     try:
         l = result.get("movies")[0]
-    else:
+    except:
         update.effective_message.reply_text('Sorry Not Found,Pls Enter The correct Movie Name')
     name = l.get("name")
     year = l.get("year")
