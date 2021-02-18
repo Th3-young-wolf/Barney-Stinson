@@ -14,7 +14,7 @@ from tg_bot import dispatcher, OWNER_ID, LOGGER
 from tg_bot.modules.helper_funcs.filters import CustomFilters
 import asyncio
 from rotten_tomatoes_client import RottenTomatoesClient
-import requests
+import requests,bs4
 
 USERS_GROUP = 4
 rep="""  ⚡⚡{title}⚡⚡
