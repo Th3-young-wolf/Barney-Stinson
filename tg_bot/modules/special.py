@@ -289,6 +289,7 @@ def imdb(bot: Bot, update: Update, args: List[int]):
             Story Line : 
             {story_line}
         """
+        update.effective_message.reply_text(rep1)
     except IndexError:
         update.effective_message.reply_text("Plox enter **Valid movie name** kthx")
 
