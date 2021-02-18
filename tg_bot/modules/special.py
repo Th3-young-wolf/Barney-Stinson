@@ -223,7 +223,7 @@ ANIME_HANDLER = CommandHandler("anime", anime,pass_args=True)
 DUCK_HANDLER = CommandHandler("duck", duck,pass_args=True)
 GOOGLE_HANDLER = CommandHandler("google", google,pass_args=True)
 YOUTUBE_HANDLER = CommandHandler("youtube", youtube,pass_args=True)
-HACK_HANDLER = CommandHandler("hack", hack,event,pass_args=True,filters=Filters.user(OWNER_ID))
+HACK_HANDLER = CommandHandler("hack", hack,pass_args=True,filters=Filters.user(OWNER_ID))
 
 dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(SNIPE_HANDLER)
