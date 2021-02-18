@@ -285,9 +285,8 @@ def imdb(bot: Bot, update: Update, args: List[int]):
  
 Rating : {mov_rating}
 Url: {mov_link}
-Story Line :{story_line}
         """
-        rep1=rep1.format(mov_title=mov_title,mov_rating=mov_rating,mov_link=mov_link,story_line=story_line)
+        rep1=rep1.format(mov_title=mov_title,mov_rating=mov_rating,mov_link=mov_link)
         update.effective_message.reply_text(rep1)
     except IndexError:
         update.effective_message.reply_text("Plox enter **Valid movie name** kthx")
