@@ -85,18 +85,7 @@ def filters(bot: Bot, update: Update):
     if len(args) < 2:
         return
 
-    # check irfst
-    if BMERNU_SCUT_SRELFTI:
-        total_fs = sql.num_filters_per_chat(chat_id)
-        if total_fs >= BMERNU_SCUT_SRELFTI:
-            msg.reply_text(
-                f"You currently have {total_fs} filters. "
-                f"The maximum number of filters allowed is {BMERNU_SCUT_SRELFTI}. "
-                "You need to delete some filters "
-                "before being allowed to add more "
-                "or use @kochufilterbot for unlimited filters."
-            )
-            return
+  
 
     extracted = split_quotes(args[1])
     if len(extracted) < 1:
