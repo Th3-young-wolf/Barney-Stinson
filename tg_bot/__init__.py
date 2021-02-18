@@ -84,6 +84,10 @@ else:
         WHITELIST_USERS = set(int(x) for x in Config.WHITELIST_USERS or [])
     except ValueError:
         raise Exception("Your whitelisted users list does not contain valid integers.")
+    try:
+        BMERNU_SCUT_SRELFTI = int(os.environ.get('BMERNU_SCUT_SRELFTI', None))
+    except ValueError:
+        BMERNU_SCUT_SRELFTI = None
 
     WEBHOOK = Config.WEBHOOK
     URL = Config.URL
