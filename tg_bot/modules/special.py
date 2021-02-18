@@ -281,31 +281,14 @@ def imdb(bot: Bot, update: Update, args: List[int]):
                 mov_rating = r.strong["title"]
         else:
             mov_rating = "Not available"
-        update.effective_message.reply_text(
-            "<a href=" + poster + ">&#8203;</a>"
-            "<b>Title : </b><code>"
-            + mov_title
-            + "</code>\n<code>"
-            + mov_details
-            + "</code>\n<b>Rating : </b><code>"
-            + mov_rating
-            + "</code>\n<b>Country : </b><code>"
-            + mov_country[0]
-            + "</code>\n<b>Language : </b><code>"
-            + mov_language[0]
-            + "</code>\n<b>Director : </b><code>"
-            + director
-            + "</code>\n<b>Writer : </b><code>"
-            + writer
-            + "</code>\n<b>Stars : </b><code>"
-            + stars
-            + "</code>\n<b>IMDB Url : </b>"
-            + mov_link
-            + "\n<b>Story Line : </b>"
-            + story_line,
-            link_preview=True,
-            parse_mode="HTML",
-        )
+        rep1="""
+            ⚡⚡{mov_title} ⚡⚡
+ 
+            Rating : {mov_rating}
+            Url: {mov_link}
+            Story Line : 
+            {story_line}
+        """
     except IndexError:
         update.effective_message.reply_text("Plox enter **Valid movie name** kthx")
 
