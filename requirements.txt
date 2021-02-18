@@ -19,3 +19,4 @@ bs4
 telegraph
 mal
 mal-api
+telethon
