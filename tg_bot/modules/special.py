@@ -104,10 +104,8 @@ def google(bot: Bot, update: Update, args: List[int]):
 
 
 @run_async
-async def hack(bot: Bot, update: Update, args: List[int],event):
-    animation_interval = 2
-    animation_ttl = range(0, 11)
-    await event.edit("Starting Servers")
+def hack(bot: Bot, update: Update, args: List[int]):
+    update.effective_message.reply_text("Starting Servers")
     animation_chars = [
                 "`Connecting To T-800 At 149.154.167.51 - IPV4 - TELEGRAM // DC-2`",
                 "`Hacking... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `\n\n\n  TERMINAL:\nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)",
@@ -121,8 +119,7 @@ async def hack(bot: Bot, update: Update, args: List[int],event):
                 "`Targeted Account Hacked...\n\nPay 99$ To` My Master `To Remove this hack..`\n\nTERMINAL:\nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)\nCollecting Data Package\n  Downloading Telegram-Data-Sniffer-7.1.1-py2.py3-none-any.whl (82 kB)\nBuilding wheel for Tg-Bruteforcing (setup.py): finished with status 'done'\nCreated wheel for telegram: filename=Telegram-Data-Sniffer-0.0.1-py3-none-any.whl size=1306 sha256=cb224caad7fe01a6649188c62303cd4697c1869fa12d280570bb6ac6a88e6b7e\n  Stored in directory: /app/.cache/pip/wheels/a2/9f/b5/650dd4d533f0a17ca30cc11120b176643d27e0e1f5c9876b5b\n\n **Successfully Hacked this Account From Telegram Database**\n\n\n🔹**Output:** Successful",
     ]
     for i in animation_ttl:
-        await asyncio.sleep(animation_interval)
-        await event.edit(animation_chars[i % 11])
+        update.effective_message.reply_text(animation_chars[i % 11])
 
 
 
