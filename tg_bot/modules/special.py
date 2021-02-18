@@ -182,35 +182,84 @@ def cricket(bot: Bot, update: Update, args: List[int]):
 
 @run_async
 def search(bot: Bot, update: Update, args: List[int]):
-    input_str = args
-    result = RottenTomatoesClient.search(term=input_str, limit=1)
     try:
-        l = result.get("movies")[0]
-    except:
-        update.effective_message.reply_text('Sorry Not Found,Pls Enter The correct Movie Name')
-    name = l.get("name")
-    year = l.get("year")
-    image = l.get("image")
-    Classe = l.get("meterClass")
-    Meter = l.get("meterScore")
-    ullu = l.get("url")
-    url = f"http://rottentomatoes.com{ullu}"
-    Ceset = l.get("castItems")
-    cast = ""
-    for Hitler in Ceset:
-      cast += Hitler.get("name") +"\n"
-    caption = f"""Name : {name}
-Year Of Release : {year}
-Link : {url}
-Meter Class : {Classe}
-Meter Score : {Meter}
-Cast : 
-{cast}"""
-    try:
-        update.effective_message.reply_text(caption)
-    except:
-        update.effective_message.reply_text("This Feature won't work in private chats and grps")
-    
+        movie_name =args
+        remove_space = movie_name
+        final_name = "+".join(remove_space)
+        page = requests.get(
+            "https://www.imdb.com/find?ref_=nv_sr_fn&q=" + final_name + "&s=all"
+        )
+        str(page.status_code)
+        soup = bs4.BeautifulSoup(page.content, "lxml")
+        odds = soup.findAll("tr", "odd")
+        mov_title = odds[0].findNext("td").findNext("td").text
+        mov_link = (
+            "http://www.imdb.com/" + odds[0].findNext("td").findNext("td").a["href"]
+        )
+        page1 = requests.get(mov_link)
+        soup = bs4.BeautifulSoup(page1.content, "lxml")
+        if soup.find("div", "poster"):
+            poster = soup.find("div", "poster").img["src"]
+        else:
+            poster = ""
+        if soup.find("div", "title_wrapper"):
+            pg = soup.find("div", "title_wrapper").findNext("div").text
+            mov_details = re.sub(r"\s+", " ", pg)
+        else:
+            mov_details = ""
+        credits = soup.findAll("div", "credit_summary_item")
+        if len(credits) == 1:
+            director = credits[0].a.text
+            writer = "Not available"
+            stars = "Not available"
+        elif len(credits) > 2:
+            director = credits[0].a.text
+            writer = credits[1].a.text
+            actors = []
+            for x in credits[2].findAll("a"):
+                actors.append(x.text)
+            actors.pop()
+            stars = actors[0] + "," + actors[1] + "," + actors[2]
+        else:
+            director = credits[0].a.text
+            writer = "Not available"
+            actors = []
+            for x in credits[1].findAll("a"):
+                actors.append(x.text)
+            actors.pop()
+            stars = actors[0] + "," + actors[1] + "," + actors[2]
+        if soup.find("div", "inline canwrap"):
+            story_line = soup.find("div", "inline canwrap").findAll("p")[0].text
+        else:
+            story_line = "Not available"
+        info = soup.findAll("div", "txt-block")
+        if info:
+            mov_country = []
+            mov_language = []
+            for node in info:
+                a = node.findAll("a")
+                for i in a:
+                    if "country_of_origin" in i["href"]:
+                        mov_country.append(i.text)
+                    elif "primary_language" in i["href"]:
+                        mov_language.append(i.text)
+        if soup.findAll("div", "ratingValue"):
+            for r in soup.findAll("div", "ratingValue"):
+                mov_rating = r.strong["title"]
+        else:
+            mov_rating = "Not available"
+        rep1="""
+            {mov_title}
+Rating : {mov_rating}
+Url: {mov_link}
+        """
+        rep1=rep1.format(mov_title=mov_title,mov_rating=mov_rating,mov_link=mov_link)
+        update.effective_message.reply_text(rep1)
+    except IndexError:
+        update.effective_message.reply_text("Plox enter **Valid movie name** kthx")
+
+
+
     
 @run_async
 def imdb(bot: Bot, update: Update, args: List[int]):
@@ -281,8 +330,7 @@ def imdb(bot: Bot, update: Update, args: List[int]):
         else:
             mov_rating = "Not available"
         rep1="""
-            ⚡{mov_title}⚡
- 
+            {mov_title}
 Rating : {mov_rating}
 Url: {mov_link}
         """
