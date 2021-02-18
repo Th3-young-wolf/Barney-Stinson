@@ -186,8 +186,10 @@ def cricket(bot: Bot, update: Update, args: List[int]):
 def search(bot: Bot, update: Update, args: List[int]):
     input_str = args
     result = RottenTomatoesClient.search(term=input_str, limit=1)
-    
-    l = result.get("movies")[0]
+    try:
+        l = result.get("movies")[0]
+    else:
+        update.effective_message.reply_text('Sorry Not Found,Pls Enter The correct Movie Name')
     name = l.get("name")
     year = l.get("year")
     image = l.get("image")
