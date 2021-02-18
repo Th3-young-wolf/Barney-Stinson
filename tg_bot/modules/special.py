@@ -184,7 +184,7 @@ def cricket(bot: Bot, update: Update, args: List[int]):
 
 @run_async
 def film(bot: Bot, update: Update, args: List[int]):
-    input_str = '+'.join(args)
+    input_str = args
     result = RottenTomatoesClient.search(term=input_str, limit=1)
     
     l = result.get("movies")[0]
