@@ -106,8 +106,7 @@ def google(bot: Bot, update: Update, args: List[int]):
 @run_async
 def hack(bot: Bot, update: Update, args: List[int]):
     
-    animation_chars = 
-                """Connecting To T-800 At 149.154.167.51 - IPV4 - TELEGRAM // DC-2`",
+    animation_chars ="""Connecting To T-800 At 149.154.167.51 - IPV4 - TELEGRAM // DC-2`",
                 `Hacking... 0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `\n\n\n  TERMINAL:\nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)",
                 'Hacking... 4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `\n\n\n  TERMINAL:\nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)\nCollecting Data Package",
                 'Hacking... 8%\n██▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒ `\n\n\n  TERMINAL:\nDownloading Bruteforce-Telegram-0.1.tar.gz (9.3 kB)\nCollecting Data Package\n  Downloading Telegram-Data-Sniffer-7.1.1-py2.py3-none-any.whl (82 kB)
