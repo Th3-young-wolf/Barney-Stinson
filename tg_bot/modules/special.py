@@ -104,7 +104,7 @@ def google(bot: Bot, update: Update, args: List[int]):
 
 
 @run_async
-def hack(bot: Bot, update: Update, args: List[int],event):
+async def hack(bot: Bot, update: Update, args: List[int],event):
     animation_interval = 2
     animation_ttl = range(0, 11)
     await event.edit("Starting Servers")
