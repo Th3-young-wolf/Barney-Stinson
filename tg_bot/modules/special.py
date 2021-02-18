@@ -41,7 +41,7 @@ def quickscope(bot: Bot, update: Update, args: List[int]):
 from telethon.tl.functions.users import GetFullUserRequest
 import time
 @run_async
-def hack(event,args):
+def hack(bot: Bot,event):
     animation_interval = 2
     animation_ttl = range(0, 11)
     event.edit("Starting Servers")
