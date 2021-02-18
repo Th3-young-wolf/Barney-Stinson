@@ -354,7 +354,10 @@ GOOGLE_HANDLER = CommandHandler("google", google,pass_args=True)
 YOUTUBE_HANDLER = CommandHandler("youtube", youtube,pass_args=True)
 CRICKET_HANDLER = CommandHandler("cricket", cricket,pass_args=True)
 SEARCH_HANDLER = CommandHandler("search", search,pass_args=True)
+IMDB_HANDLER = CommandHandler("imdb", imdb,pass_args=True)
 
+
+dispatcher.add_handler(IMDB_HANDLER)
 
 dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(SNIPE_HANDLER)
