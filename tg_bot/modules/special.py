@@ -25,13 +25,14 @@ Rating: {rate}⭐
 Genres:{genre}👺
 URL: {url}"""
 
+ec=False
 
 @run_async
 def echo(bot: Bot, update: Update, args: List[int]):
     if args[0]=='off':
         update.effective_message.reply_text('test')
     else:
-        update.effective_message.reply_text('Sorry to say But this is an error')
+        update.effective_message.reply_text(args)
 @run_async
 def wspr(bot: Bot, update: Update, args: List[int]):
     event =update
