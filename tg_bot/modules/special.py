@@ -28,7 +28,6 @@ URL: {url}"""
 
 @run_async
 def echo(bot: Bot, update: Update, args: List[int]):
-    update.effective_message.reply_text(args[0])
     if args[0]=='off':
         update.effective_message.reply_text('test')
     else:
