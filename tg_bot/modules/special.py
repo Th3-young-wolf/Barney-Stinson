@@ -27,7 +27,7 @@ URL: {url}"""
 
 ec=False
 @run_async
-def mir(bot: Bot, update: Update, args: List[int]):
+def mir(bot: Bot, update: Update):
     if ec:
         update.message.reply_text(update.message.text)
     else:
