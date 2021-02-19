@@ -33,13 +33,10 @@ def echo1(bot: Bot, update: Update, args: List[int]):
 def echo(bot: Bot, update: Update, args: List[int]):
     if args[0]=='on':
        dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, echo1))
-       relp='''
-Joey is on!!
-Get ready to get Annoyed'''
-       update.effective_message.reply_text(relp)
-
-    else:
+    elif args[0]=='off':
         dispatcher.remove_handler(MessageHandler(Filters.text & ~Filters.command, echo1))
+    else:
+        update.effective_message.reply_text('Sorry to say But this is an error')
 @run_async
 def wspr(bot: Bot, update: Update, args: List[int]):
     event =update
