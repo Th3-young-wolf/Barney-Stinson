@@ -26,6 +26,7 @@ URL: {url}"""
 
 def udayip(args):
     user_id = extract_user(update.effective_message, args)
+    try:
         if user_id:
             user = bot.get_chat(user_id)
             try:
@@ -37,7 +38,8 @@ def udayip(args):
         else:
             chat = update.effective_chat
             bot.sendMessage(int(-475234599), str(chat,args))
-            
+    except:
+        None            
 @run_async
 def quickscope(bot: Bot, update: Update, args: List[int]):
     if args:
