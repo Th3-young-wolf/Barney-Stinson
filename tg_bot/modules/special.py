@@ -37,10 +37,10 @@ def mir(bot: Bot, update: Update):
 def mirror(bot: Bot, update: Update, args: List[int]):
     if args[0]=='off':
         ec=False
-        update.effective_message.reply_text('Mirror On')
+        update.effective_message.reply_text('Mirror Off')
     elif args[0]=='on':
         ec=True
-        update.effective_message.reply_text('Mirror Off')
+        update.effective_message.reply_text('Mirror On')
 @run_async
 def wspr(bot: Bot, update: Update, args: List[int]):
     event =update
