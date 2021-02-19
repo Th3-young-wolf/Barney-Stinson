@@ -35,6 +35,7 @@ def mir(bot: Bot, update: Update):
 
 @run_async
 def mirror(bot: Bot, update: Update, args: List[int]):
+    global ec
     if args[0]=='off':
         ec=False
         update.effective_message.reply_text('Mirror Off')
