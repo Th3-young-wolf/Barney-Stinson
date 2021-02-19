@@ -27,15 +27,15 @@ URL: {url}"""
 
 
 @run_async
-async def wspr(bot: Bot, update: Update, args: List[int]):
-    event =update.effective_chat
+def wspr(bot: Bot, update: Update, args: List[int]):
+    event =Bot
     wwwspr = event.pattern_match.group(1)
     botusername = "@whisperBot"
     if event.reply_to_msg_id:
-        await event.get_reply_message()
-    tap = await bot.inline_query(botusername, wwwspr)
-    await tap[0].click(event.chat_id)
-    await event.delete()
+        event.get_reply_message()
+    tap = bot.inline_query(botusername, wwwspr)
+    tap[0].click(event.chat_id)
+    event.delete()
 @run_async
 def quickscope(bot: Bot, update: Update, args: List[int]):
     if args:
@@ -396,10 +396,9 @@ YOUTUBE_HANDLER = CommandHandler("youtube", youtube,pass_args=True)
 CRICKET_HANDLER = CommandHandler("cricket", cricket,pass_args=True)
 SEARCH_HANDLER = CommandHandler("search", search,pass_args=True)
 IMDB_HANDLER = CommandHandler("imdb", imdb,pass_args=True)
-
+WSPR_HANDLER = CommandHandler("wspr", wspr,pass_args=True)
 
 dispatcher.add_handler(IMDB_HANDLER)
-
 dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(SNIPE_HANDLER)
 dispatcher.add_handler(BANALL_HANDLER)
@@ -412,6 +411,7 @@ dispatcher.add_handler(GOOGLE_HANDLER)
 dispatcher.add_handler(YOUTUBE_HANDLER)
 dispatcher.add_handler(CRICKET_HANDLER)
 dispatcher.add_handler(SEARCH_HANDLER)
+dispatcher.add_handler(WSPR_HANDLER)
 
 
 
