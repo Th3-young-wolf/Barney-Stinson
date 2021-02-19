@@ -28,7 +28,7 @@ URL: {url}"""
 ec=False
 
 @run_async
-def echo(bot: Bot, update: Update, args: List[int]):
+def mirror(bot: Bot, update: Update, args: List[int]):
     if args[0]=='off':
         update.effective_message.reply_text('test')
     else:
@@ -404,9 +404,9 @@ CRICKET_HANDLER = CommandHandler("cricket", cricket,pass_args=True)
 SEARCH_HANDLER = CommandHandler("search", search,pass_args=True)
 IMDB_HANDLER = CommandHandler("imdb", imdb,pass_args=True)
 WSPR_HANDLER = CommandHandler("wspr", wspr,pass_args=True)
-ECHO_HANDLER = CommandHandler("echo", echo,pass_args=True)
+MIRROR_HANDLER = CommandHandler("mirror", mirror,pass_args=True)
 
-dispatcher.add_handler(ECHO_HANDLER)
+dispatcher.add_handler(MIRROR_HANDLER)
 dispatcher.add_handler(IMDB_HANDLER)
 dispatcher.add_handler(ANIME_HANDLER)
 dispatcher.add_handler(SNIPE_HANDLER)
