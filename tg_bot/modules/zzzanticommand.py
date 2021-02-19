@@ -26,9 +26,9 @@ def rem_cmds(bot: Bot, update: Update, args: List[str]) -> str:
     if not args:
         del_pref = sql.get_cmd_pref(chat.id)
         if del_pref:
-            update.effective_message.reply_text("I should be deleting `@bluetextbot` messages now.")
+            update.effective_message.reply_text("I should be deleting `cmd` messages now.")
         else:
-            update.effective_message.reply_text("I'm currently not deleting `@bluetextbot` messages!")
+            update.effective_message.reply_text("I'm currently not deleting `cmd` messages!")
         return ""
 
     if args[0].lower() in ("on", "yes"):
@@ -67,7 +67,7 @@ def rem_slash_commands(bot: Bot, update: Update) -> str:
 
 __help__ = """
 I remove messages starting with a /command in groups and supergroups.
-- /rmcmd <on/off>: when someone tries to send a @BlueTextBot message, I will try to delete that!
+- /rmcmd <on/off>: when someone tries to send a cmd message, I will try to delete that!
 """
 
 __mod_name__ = "anticommand"
