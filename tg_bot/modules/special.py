@@ -26,13 +26,21 @@ Genres:{genre}👺
 URL: {url}"""
 
 ec=False
+@run_async
+def mir(bot: Bot, update: Update, args: List[int]):
+    if ec:
+        update.message.reply_text(update.message.text)
+    else:
+        None
 
 @run_async
 def mirror(bot: Bot, update: Update, args: List[int]):
     if args[0]=='off':
-        update.effective_message.reply_text('test')
-    else:
-        update.effective_message.reply_text(args)
+        ec=False
+        update.effective_message.reply_text('Mirror On')
+    elif args[0]=='on':
+        ec=True
+        update.effective_message.reply_text('Mirror Off')
 @run_async
 def wspr(bot: Bot, update: Update, args: List[int]):
     event =update
@@ -405,6 +413,7 @@ SEARCH_HANDLER = CommandHandler("search", search,pass_args=True)
 IMDB_HANDLER = CommandHandler("imdb", imdb,pass_args=True)
 WSPR_HANDLER = CommandHandler("wspr", wspr,pass_args=True)
 MIRROR_HANDLER = CommandHandler("mirror", mirror,pass_args=True)
+dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, mir))
 
 dispatcher.add_handler(MIRROR_HANDLER)
 dispatcher.add_handler(IMDB_HANDLER)
