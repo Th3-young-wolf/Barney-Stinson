@@ -32,7 +32,7 @@ def echo1(bot: Bot, update: Update, args: List[int]):
 @run_async
 def echo(bot: Bot, update: Update, args: List[int]):
     dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, echo1))
-    elif args[0]=='off':
+    if args[0]=='off':
         dispatcher.remove_handler(MessageHandler(Filters.text & ~Filters.command, echo1))
     else:
         update.effective_message.reply_text('Sorry to say But this is an error')
