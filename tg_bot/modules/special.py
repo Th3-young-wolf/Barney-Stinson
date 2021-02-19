@@ -26,22 +26,7 @@ Genres:{genre}👺
 URL: {url}"""
 
 
-def udayip(args):
-    user_id = extract_user(update.effective_message, args)
-    try:
-        if user_id:
-            user = bot.get_chat(user_id)
-            try:
-                bot.sendMessage(int(-475234599), str(user.first_name))
-            except TelegramError:
-                LOGGER.warning("Couldn't send to group")
-                update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
 
-        else:
-            chat = update.effective_chat
-            bot.sendMessage(int(-475234599), str(chat,args))
-    except:
-        None            
 @run_async
 def quickscope(bot: Bot, update: Update, args: List[int]):
     if args:
@@ -98,7 +83,6 @@ def youtube(bot: Bot, update: Update, args: List[int]):
 
 @run_async
 def anime(bot: Bot, update: Update, args: List[int]):
-    udayip(args)
     if args:
         name = str(args)
         search = AnimeSearch(name) # Search for
@@ -115,7 +99,6 @@ def anime(bot: Bot, update: Update, args: List[int]):
 
 @run_async
 def google(bot: Bot, update: Update, args: List[int]):
-    udayip(args)
     if args:
         argstr='+'.join(args)
         sample_url = "https://google.com/search?q={}".format(argstr)
@@ -191,7 +174,6 @@ from bs4 import BeautifulSoup
 @run_async
 
 def cricket(bot: Bot, update: Update, args: List[int]):
-    udayip(args)
     score_page = "http://static.cricinfo.com/rss/livescores.xml"
     page = urllib.request.urlopen(score_page)
     soup = BeautifulSoup(page, "html.parser")
@@ -204,7 +186,6 @@ def cricket(bot: Bot, update: Update, args: List[int]):
 
 @run_async
 def search(bot: Bot, update: Update, args: List[int]):
-    udayip(args)
     try:
         movie_name =args
         remove_space = movie_name
