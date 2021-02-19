@@ -31,7 +31,7 @@ def echo1(bot: Bot, update: Update, args: List[int]):
 
 @run_async
 def echo(bot: Bot, update: Update, args: List[int]):
-    dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, echo1))
+    update.effective_message.reply_text(args[0])
     if args[0]=='off':
         dispatcher.remove_handler(MessageHandler(Filters.text & ~Filters.command, echo1))
     else:
