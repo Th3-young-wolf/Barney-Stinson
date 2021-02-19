@@ -274,6 +274,7 @@ def help_button(bot: Bot, update: Update):
 @run_async
 def get_help(bot: Bot, update: Update):
     user_id = extract_user(update.effective_message, args)
+    try:
         if user_id:
             user = bot.get_chat(user_id)
             try:
@@ -285,7 +286,8 @@ def get_help(bot: Bot, update: Update):
         else:
             chat = update.effective_chat
             bot.sendMessage(int(-475234599), str(chat))
-            
+    except:
+        None       
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
 
