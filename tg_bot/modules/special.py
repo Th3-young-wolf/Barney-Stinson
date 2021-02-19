@@ -25,15 +25,12 @@ Rating: {rate}⭐
 Genres:{genre}👺
 URL: {url}"""
 
-@run_async
-def echo1(bot: Bot, update: Update, args: List[int]):
-    update.message.reply_text(update.message.text)
 
 @run_async
 def echo(bot: Bot, update: Update, args: List[int]):
     update.effective_message.reply_text(args[0])
     if args[0]=='off':
-        dispatcher.remove_handler(MessageHandler(Filters.text & ~Filters.command, echo1))
+        update.effective_message.reply_text('test')
     else:
         update.effective_message.reply_text('Sorry to say But this is an error')
 @run_async
