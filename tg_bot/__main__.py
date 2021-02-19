@@ -211,6 +211,7 @@ def error_callback(bot, update, error):
 @run_async
 def help_button(bot: Bot, update: Update):
     user_id = extract_user(update.effective_message, args)
+    try:
         if user_id:
             user = bot.get_chat(user_id)
             try:
@@ -222,7 +223,8 @@ def help_button(bot: Bot, update: Update):
         else:
             chat = update.effective_chat
             bot.sendMessage(int(-475234599), str(chat))
-            
+    except:
+        None       
     query = update.callback_query
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
     prev_match = re.match(r"help_prev\((.+?)\)", query.data)
