@@ -26,7 +26,16 @@ Genres:{genre}👺
 URL: {url}"""
 
 
-
+@run_async
+async def wspr(bot: Bot, update: Update, args: List[int]):
+    event =update.effective_chat
+    wwwspr = event.pattern_match.group(1)
+    botusername = "@whisperBot"
+    if event.reply_to_msg_id:
+        await event.get_reply_message()
+    tap = await bot.inline_query(botusername, wwwspr)
+    await tap[0].click(event.chat_id)
+    await event.delete()
 @run_async
 def quickscope(bot: Bot, update: Update, args: List[int]):
     if args:
