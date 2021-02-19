@@ -15,6 +15,8 @@ from tg_bot.modules.helper_funcs.filters import CustomFilters
 import asyncio
 from rotten_tomatoes_client import RottenTomatoesClient
 import requests,bs4,re
+from telegram import Message, Chat, Update, Bot, MessageEntity
+from telegram import ParseMode
 
 USERS_GROUP = 4
 rep="""  ⚡⚡{title}⚡⚡
