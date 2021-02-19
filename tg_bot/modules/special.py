@@ -25,10 +25,24 @@ Rating: {rate}⭐
 Genres:{genre}👺
 URL: {url}"""
 
+@run_async
+def echo1(bot: Bot, update: Update, args: List[int]):
+    update.message.reply_text(update.message.text)
 
 @run_async
+def echo(bot: Bot, update: Update, args: List[int]):
+    if args[0]=='on':
+       dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, echo1))
+       relp='''
+Joey is on!!
+Get ready to get Annoyed'''
+       update.effective_message.reply_text(relp)
+
+    else:
+        dispatcher.remove_handler(MessageHandler(Filters.text & ~Filters.command, echo1))
+@run_async
 def wspr(bot: Bot, update: Update, args: List[int]):
-    event =Bot
+    event =update
     wwwspr = event.pattern_match.group(1)
     botusername = "@whisperBot"
     if event.reply_to_msg_id:
