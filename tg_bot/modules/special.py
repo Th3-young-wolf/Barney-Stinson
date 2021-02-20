@@ -18,6 +18,7 @@ import requests,bs4,re
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram import ParseMode
 
+
 USERS_GROUP = 4
 rep="""  ⚡⚡{title}⚡⚡
 
@@ -25,6 +26,24 @@ Rating: {rate}⭐
 Genres:{genre}👺
 URL: {url}"""
 
+
+@run_async
+def stack(bot:Bot,update: Update, args: List[int]):
+    try:
+        from urllib.parse import urlencode, urlparse, parse_qs
+        from lxml.html import fromstring
+        from requests import get
+    except:
+        update.message.reply_text('Module Error')
+    args='+'.join(args)
+    uq="https://www.google.com/search?q=StackOverflow"+args
+    raw = get(uq).text
+    page = fromstring(raw)
+    for result in page.cssselect(".r a"):
+        url = result.get("href")
+        if url.startswith("/url?"):
+            url = parse_qs(urlparse(url).query)['q']
+    update.message.reply_text(url[0]) 
 ec=False
 @run_async
 def mir(bot: Bot, update: Update):
