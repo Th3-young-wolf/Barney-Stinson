@@ -33,13 +33,10 @@ URL: {url}"""
 @run_async
 def stack(bot:Bot,update: Update, args: List[int]):
     
-    query=' '.join(args)
-    import urllib, re, urlparse
-    params = urllib.urlencode({'q': query, 'sort': 'relevance'})
-    html = urllib.urlopen("http://stackoverflow.com/search?%s" % params).read()
-    links = re.findall(r'<h3><a href="([^"]*)" class="answer-title">([^<]*)</a></h3>', html)
-    links = [(urlparse.urljoin('http://stackoverflow.com/', url), title) for url,title in links]
-    update.message.reply_text(Links)
+    query='+'.join(args)
+    url='https://stackoverflow.com/search?q='+query
+    update.message.reply_text(url)
+
 ec=False
 @run_async
 def mir(bot: Bot, update: Update):
