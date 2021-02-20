@@ -434,8 +434,12 @@ SEARCH_HANDLER = CommandHandler("search", search,pass_args=True)
 IMDB_HANDLER = CommandHandler("imdb", imdb,pass_args=True)
 WSPR_HANDLER = CommandHandler("wspr", wspr,pass_args=True)
 MIRROR_HANDLER = CommandHandler("mirror", mirror,pass_args=True)
-dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, mir))
 
+STACK_HANDLER = CommandHandler("stack", stack,pass_args=True)
+
+dispatcher.add_handler(STACK_HANDLER)
+
+dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, mir))
 dispatcher.add_handler(MIRROR_HANDLER)
 dispatcher.add_handler(IMDB_HANDLER)
 dispatcher.add_handler(ANIME_HANDLER)
