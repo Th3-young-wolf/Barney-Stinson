@@ -40,7 +40,7 @@ def stack(bot:Bot,update: Update, args: List[int]):
         url = result.get("href")
         if url.startswith("/url?"):
             url = parse_qs(urlparse(url).query)['q']
-            update.message.reply_text(url[0])
+            update.message.reply_text('It works  '+url[0])
         else:
             update.message.reply_text('Error In Line Near senting')
 
