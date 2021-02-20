@@ -20,7 +20,7 @@ from telegram import ParseMode
 from urllib.parse import urlencode, urlparse, parse_qs
 from lxml.html import fromstring
 from requests import get
-import urllib, re, urlparse
+import urllib, re
 
 USERS_GROUP = 4
 rep="""  ⚡⚡{title}⚡⚡
