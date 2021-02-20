@@ -29,12 +29,9 @@ URL: {url}"""
 
 @run_async
 def stack(bot:Bot,update: Update, args: List[int]):
-    try:
-        from urllib.parse import urlencode, urlparse, parse_qs
-        from lxml.html import fromstring
-        from requests import get
-    except:
-        update.message.reply_text('Module Error')
+    from urllib.parse import urlencode, urlparse, parse_qs
+    from lxml.html import fromstring
+    from requests import get
     args='+'.join(args)
     uq="https://www.google.com/search?q=StackOverflow"+args
     raw = get(uq).text
@@ -43,7 +40,10 @@ def stack(bot:Bot,update: Update, args: List[int]):
         url = result.get("href")
         if url.startswith("/url?"):
             url = parse_qs(urlparse(url).query)['q']
-    update.message.reply_text(url[0]) 
+            update.message.reply_text(url[0])
+        else:
+            update.message.reply_text('Error In Line Near senting')
+
 ec=False
 @run_async
 def mir(bot: Bot, update: Update):
