@@ -33,18 +33,13 @@ URL: {url}"""
 @run_async
 def stack(bot:Bot,update: Update, args: List[int]):
     update.message.reply_text('Error In Line Near senting')
-    args='+'.join(args)
-    uq="https://www.google.com/search?q=StackOverflow"+args
-    raw = get(uq).text
-    page = fromstring(raw)
-    for result in page.cssselect(".r a"):
-        url = result.get("href")
-        if url.startswith("/url?"):
-            url = parse_qs(urlparse(url).query)['q']
-            update.message.reply_text('It works  '+url[0])
-        else:
-            update.message.reply_text('Error In Line Near senting')
-
+    query=' '.join(args)
+    import urllib, urllib2, re, urlparse
+    params = urllib.urlencode({'q': query, 'sort': 'relevance'})
+    html = urllib2.urlopen("http://stackoverflow.com/search?%s" % params).read()
+    links = re.findall(r'<h3><a href="([^"]*)" class="answer-title">([^<]*)</a></h3>', html)
+    links = [(urlparse.urljoin('http://stackoverflow.com/', url), title) for url,title in links]
+    update.message.reply_text(Links)
 ec=False
 @run_async
 def mir(bot: Bot, update: Update):
