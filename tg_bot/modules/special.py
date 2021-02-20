@@ -17,6 +17,9 @@ from rotten_tomatoes_client import RottenTomatoesClient
 import requests,bs4,re
 from telegram import Message, Chat, Update, Bot, MessageEntity
 from telegram import ParseMode
+from urllib.parse import urlencode, urlparse, parse_qs
+from lxml.html import fromstring
+from requests import get
 
 
 USERS_GROUP = 4
@@ -29,9 +32,7 @@ URL: {url}"""
 
 @run_async
 def stack(bot:Bot,update: Update, args: List[int]):
-    from urllib.parse import urlencode, urlparse, parse_qs
-    from lxml.html import fromstring
-    from requests import get
+    update.message.reply_text('Error In Line Near senting')
     args='+'.join(args)
     uq="https://www.google.com/search?q=StackOverflow"+args
     raw = get(uq).text
