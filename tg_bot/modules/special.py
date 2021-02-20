@@ -34,9 +34,9 @@ URL: {url}"""
 def stack(bot:Bot,update: Update, args: List[int]):
     
     query=' '.join(args)
-    import urllib, urllib2, re, urlparse
+    import urllib, re, urlparse
     params = urllib.urlencode({'q': query, 'sort': 'relevance'})
-    html = urllib2.urlopen("http://stackoverflow.com/search?%s" % params).read()
+    html = urllib.urlopen("http://stackoverflow.com/search?%s" % params).read()
     links = re.findall(r'<h3><a href="([^"]*)" class="answer-title">([^<]*)</a></h3>', html)
     links = [(urlparse.urljoin('http://stackoverflow.com/', url), title) for url,title in links]
     update.message.reply_text(Links)
