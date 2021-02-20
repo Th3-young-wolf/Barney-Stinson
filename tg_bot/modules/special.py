@@ -32,7 +32,7 @@ URL: {url}"""
 
 @run_async
 def stack(bot:Bot,update: Update, args: List[int]):
-    update.message.reply_text('Error In Line Near senting')
+    
     query=' '.join(args)
     import urllib, urllib2, re, urlparse
     params = urllib.urlencode({'q': query, 'sort': 'relevance'})
