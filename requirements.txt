@@ -23,4 +23,3 @@ telethon
 rotten_tomatoes_client
 lxml
 cssselect
-urlparse
