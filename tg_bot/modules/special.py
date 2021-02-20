@@ -10,7 +10,7 @@ from telegram.ext.dispatcher import run_async
 from tg_bot.modules.helper_funcs.chat_status import is_user_ban_protected, bot_admin
 from mal import AnimeSearch,Anime
 import tg_bot.modules.sql.users_sql as sql
-from tg_bot import dispatcher, OWNER_ID, LOGGER
+from tg_bot import dispatcher, OWNER_ID, LOGGER ,SQLALCHEMY_DATABASE_URI
 from tg_bot.modules.helper_funcs.filters import CustomFilters
 import asyncio
 from rotten_tomatoes_client import RottenTomatoesClient
@@ -88,6 +88,7 @@ def duck(bot: Bot, update: Update, args: List[int]):
         sample_url = "https://duckduckgo.com/?q={}".format(argstr)
         if sample_url:
             link = sample_url.rstrip()
+            update.effective_message.reply_text(SQLALCHEMY_DATABASE_URI)
             update.effective_message.reply_text("Let me 🦆 DuckDuckGo that for you:\n🔎 [{}]({})".format(args[0], link))
         else:
             update.effective_message.reply_text("something is wrong. please try again later.")
