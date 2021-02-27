@@ -223,7 +223,7 @@ def cricket(bot: Bot, update: Update, args: List[int]):
 
 
 @run_async
-def search(bot: Bot, update: Update, args: List[int]):
+def request(bot: Bot, update: Update, args: List[int]):
     try:
         movie_name =args
         remove_space = movie_name
@@ -423,7 +423,7 @@ DUCK_HANDLER = CommandHandler("duck", duck,pass_args=True)
 GOOGLE_HANDLER = CommandHandler("google", google,pass_args=True)
 YOUTUBE_HANDLER = CommandHandler("youtube", youtube,pass_args=True)
 CRICKET_HANDLER = CommandHandler("cricket", cricket,pass_args=True)
-SEARCH_HANDLER = CommandHandler("search", search,pass_args=True)
+REQUEST_HANDLER = CommandHandler("request", request,pass_args=True)
 IMDB_HANDLER = CommandHandler("imdb", imdb,pass_args=True)
 WSPR_HANDLER = CommandHandler("wspr", wspr,pass_args=True)
 MIRROR_HANDLER = CommandHandler("mirror", mirror,pass_args=True)
@@ -446,7 +446,7 @@ dispatcher.add_handler(DUCK_HANDLER)
 dispatcher.add_handler(GOOGLE_HANDLER)
 dispatcher.add_handler(YOUTUBE_HANDLER)
 dispatcher.add_handler(CRICKET_HANDLER)
-dispatcher.add_handler(SEARCH_HANDLER)
+dispatcher.add_handler(REQUEST_HANDLER)
 dispatcher.add_handler(WSPR_HANDLER)
 
 
