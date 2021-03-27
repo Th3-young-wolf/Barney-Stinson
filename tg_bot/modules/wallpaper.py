@@ -1,14 +1,15 @@
 from random import randint
 
 import requests as r
-from tg_bot import SUPPORT_CHAT, WALL_API, dispatcher
+from tg_bot import dispatcher
 from tg_bot.modules.disable import DisableAbleCommandHandler
 from telegram import Update
 from telegram.ext import CallbackContext, run_async
 
 # Wallpapers module by @The Fallen Angel using wall.alphacoders.com
-
-
+WALL_API = (
+        "awoo"  # For wallpapers, get one from https://wall.alphacoders.com/api.php
+    )
 @run_async
 def wall(update: Update, context: CallbackContext):
     chat_id = update.effective_chat.id
