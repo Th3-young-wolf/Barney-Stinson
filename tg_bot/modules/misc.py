@@ -3,6 +3,9 @@ import json
 import random
 from datetime import datetime
 from typing import Optional, List
+from random import randint
+
+import requests as r
 
 import requests
 from telegram import Message, Chat, Update, Bot, MessageEntity
