@@ -414,14 +414,14 @@ __mod_name__ = "Special"
 
 @run_async
 def music(bot: Bot, update: Update, args: List[int]):
-    import requests
-    from bs4 import BeautifulSoup
-    headers = {'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}
-    textToSearch = args
-    url = 'https://www.youtube.com/results'
-    response = requests.get(url, params={'search_query': textToSearch}, headers=headers)
-    soup = BeautifulSoup(response.content, 'html.parser')
-    update.effective_message.reply_text(soup.findAll(attrs={'class':'yt-uix-tile-link'}))
+    import urllib.request
+    import re
+    args="+".join(args)
+    search="https://www.youtube.com/results?search_query="+args
+    html = urllib.request.urlopen(search)
+    video_ids = re.findall(r"watch\?v=(\S{11})", html.read().decode())
+    data="https://www.youtube.com/watch?v=" + video_ids[i]
+    update.effective_message.reply_text(data)
     
 
 
