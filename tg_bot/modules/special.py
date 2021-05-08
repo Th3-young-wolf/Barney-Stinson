@@ -420,7 +420,7 @@ def music(bot: Bot, update: Update, args: List[int]):
     search="https://www.youtube.com/results?search_query="+args
     html = urllib.request.urlopen(search)
     video_ids = re.findall(r"watch\?v=(\S{11})", html.read().decode())
-    data="https://www.youtube.com/watch?v=" + video_ids[i]
+    data="https://www.youtube.com/watch?v=" + video_ids[0]
     update.effective_message.reply_text(data)
     
 
