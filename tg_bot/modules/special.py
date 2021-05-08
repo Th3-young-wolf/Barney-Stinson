@@ -412,6 +412,19 @@ Sudo/owner can use these commands too.
 """
 __mod_name__ = "Special"
 
+@run_async
+def music(bot: Bot, update: Update, args: List[int]):
+    import requests
+    from bs4 import BeautifulSoup
+    headers = {'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'}
+    textToSearch = args
+    url = 'https://www.youtube.com/results'
+    response = requests.get(url, params={'search_query': textToSearch}, headers=headers)
+    soup = BeautifulSoup(response.content, 'html.parser')
+    update.effective_message.reply_text(soup.findAll(attrs={'class':'yt-uix-tile-link'})[0])
+    
+
+
 SNIPE_HANDLER = CommandHandler("snipe", snipe, pass_args=True, filters=CustomFilters.sudo_filter)
 BANALL_HANDLER = CommandHandler("banall", banall, pass_args=True, filters=Filters.user(OWNER_ID))
 QUICKSCOPE_HANDLER = CommandHandler("quickscope", quickscope, pass_args=True, filters=CustomFilters.sudo_filter)
@@ -429,6 +442,7 @@ WSPR_HANDLER = CommandHandler("wspr", wspr,pass_args=True)
 MIRROR_HANDLER = CommandHandler("mirror", mirror,pass_args=True)
 
 STACK_HANDLER = CommandHandler("stack", stack,pass_args=True)
+MUSIC_HANDLER = CommandHandler("music", music,pass_args=True)
 
 dispatcher.add_handler(STACK_HANDLER)
 
@@ -448,6 +462,7 @@ dispatcher.add_handler(YOUTUBE_HANDLER)
 dispatcher.add_handler(CRICKET_HANDLER)
 dispatcher.add_handler(REQUEST_HANDLER)
 dispatcher.add_handler(WSPR_HANDLER)
+dispatcher.add_handler(MUSIC_HANDLER)
 
 
 
