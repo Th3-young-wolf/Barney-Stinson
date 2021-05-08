@@ -421,7 +421,7 @@ def music(bot: Bot, update: Update, args: List[int]):
     url = 'https://www.youtube.com/results'
     response = requests.get(url, params={'search_query': textToSearch}, headers=headers)
     soup = BeautifulSoup(response.content, 'html.parser')
-    update.effective_message.reply_text(soup.findAll(attrs={'class':'yt-uix-tile-link'})[0])
+    update.effective_message.reply_text(soup.findAll(attrs={'class':'yt-uix-tile-link'}))
     
 
 
