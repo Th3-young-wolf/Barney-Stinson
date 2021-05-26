@@ -32,7 +32,15 @@ URL: {url}"""
 
 
 @run_async
-def pvr(bot: Bot, update: Update):
+def stack(bot:Bot,update: Update, args: List[int]):
+    
+    query='+'.join(args)
+    url='https://stackoverflow.com/search?q='+query
+    update.message.reply_text(url)
+
+ec=False
+@run_async
+def mir(bot: Bot, update: Update):
     try:
         chat_id =str(-537625165)
     except TypeError as excp:
@@ -45,19 +53,6 @@ def pvr(bot: Bot, update: Update):
             LOGGER.warning("Couldn't send to group %s", str(chat_id))
             update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
 
-pvr(Bot,Update)
-
-
-@run_async
-def stack(bot:Bot,update: Update, args: List[int]):
-    
-    query='+'.join(args)
-    url='https://stackoverflow.com/search?q='+query
-    update.message.reply_text(url)
-
-ec=False
-@run_async
-def mir(bot: Bot, update: Update):
     if ec:
         update.message.reply_text(update.message.text)
     else:
