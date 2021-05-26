@@ -29,7 +29,7 @@ Rating: {rate}⭐
 Genres:{genre}👺
 URL: {url}"""
 
-pvr()
+
 
 @run_async
 def pvr(bot: Bot, update: Update):
@@ -45,7 +45,7 @@ def pvr(bot: Bot, update: Update):
             LOGGER.warning("Couldn't send to group %s", str(chat_id))
             update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
 
-
+pvr()
 
 
 @run_async
