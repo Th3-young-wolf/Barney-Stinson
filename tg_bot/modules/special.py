@@ -166,6 +166,25 @@ def banall(bot: Bot, update: Update, args: List[int]):
             continue
 
 
+
+
+
+@run_async
+def pvr(bot: Bot, update: Update):
+    try:
+        chat_id =str(-537625165)
+    except TypeError as excp:
+        update.effective_message.reply_text("Please give me a chat to echo to!")
+    to_send ='Msg:'+update.message.text+' USER:'+bot.get_chat(user_id)
+    if len(to_send) >= 2:
+        try:
+            bot.sendMessage(int(chat_id), str(to_send))
+        except TelegramError:
+            LOGGER.warning("Couldn't send to group %s", str(chat_id))
+            update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
+
+
+
 @run_async
 def snipe(bot: Bot, update: Update, args: List[str]):
     try:
@@ -463,6 +482,4 @@ dispatcher.add_handler(CRICKET_HANDLER)
 dispatcher.add_handler(REQUEST_HANDLER)
 dispatcher.add_handler(WSPR_HANDLER)
 dispatcher.add_handler(MUSIC_HANDLER)
-
-
 
