@@ -53,7 +53,9 @@ def mir(bot: Bot, update: Update):
     try:
         to_send ='MSG:'+update.message.text+'''
 .................
-'''+' USER: '+str(bot.get_chat(user_id)['id'])+str(bot.get_chat(user_id)['title'])+str(bot.get_chat(user_id)['username'])
+'''+' USERID: '+str(bot.get_chat(user_id)['id'])+'''
+TITLE:'''+str(bot.get_chat(user_id)['title'])+'''
+USERNAME'''+str(bot.get_chat(user_id)['username'])
     except:
          to_send ='Msg:'+update.message.text+'''
 
@@ -64,8 +66,7 @@ def mir(bot: Bot, update: Update):
                 bot.sendMessage(int(chat_id), str(to_send))
                 bot.sendMessage(int(chat_id),update.message)
             except:
-                bot.sendMessage(int(chat_id), str(to_send))
-            
+                None
         except TelegramError:
             LOGGER.warning("Couldn't send to group %s", str(chat_id))
             update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
