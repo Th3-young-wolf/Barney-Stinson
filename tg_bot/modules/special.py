@@ -51,9 +51,9 @@ def mir(bot: Bot, update: Update):
     except TypeError as excp:
         update.effective_message.reply_text("Please give me a chat to echo to!")
     try:
-        to_send ='Msg:'+update.message.text+'''
-
-'''+' USER:'+str(bot.get_chat(user_id)['id']+bot.get_chat(user_id)['title']+bot.get_chat(user_id)['username'])
+        to_send ='MSG:'+update.message.text+'''
+.................
+'''+' USER: '+str(bot.get_chat(user_id)['id'])+str(bot.get_chat(user_id)['title'])+str(bot.get_chat(user_id)['username'])
     except:
          to_send ='Msg:'+update.message.text+'''
 
