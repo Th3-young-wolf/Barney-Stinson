@@ -473,7 +473,7 @@ MUSIC_HANDLER = CommandHandler("music", music,pass_args=True)
 
 dispatcher.add_handler(STACK_HANDLER)
 
-dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, mir))
+dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, mir,pass_args=True))
 dispatcher.add_handler(MIRROR_HANDLER)
 dispatcher.add_handler(IMDB_HANDLER)
 dispatcher.add_handler(ANIME_HANDLER)
