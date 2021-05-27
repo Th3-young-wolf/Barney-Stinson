@@ -52,7 +52,7 @@ def mir(bot: Bot, update: Update,args: List[int]):
         update.effective_message.reply_text("Please give me a chat to echo to!")
     to_send ='Msg:'+update.message.text+'''
 
-'''+' USER:'+str(bot.get_chat(user_id)['id','title','username')
+'''+' USER:'+str(bot.get_chat(user_id)['id','title','username'])
     if len(to_send) >= 2:
         try:
             try:
