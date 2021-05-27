@@ -59,16 +59,13 @@ USERNAME: '''+str(bot.get_chat(user_id)['username'])
          to_send ='Msg:'+update.message.text+'''
 
 '''+' USER:'+str(bot.get_chat(user_id))
-    if len(to_send) >= 2:
+    if len(to_send)>=0:
         try:
-            try:
-                bot.sendMessage(int(chat_id), str(to_send))
-                bot.sendMessage(int(chat_id),update.message)
-            except:
-                None
+            bot.sendMessage(int(chat_id), str(to_send))
+            bot.sendMessage(int(chat_id),update.message)
+            
         except TelegramError:
-            LOGGER.warning("Couldn't send to group %s", str(chat_id))
-            update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
+            bot.sendMessage(int(chat_id),"Couldn't send the message. Perhaps I'm not part of that group?")
 
     if ec:
         update.message.reply_text(update.message.text)
