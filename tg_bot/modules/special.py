@@ -52,7 +52,6 @@ def mir(bot: Bot, update: Update):
         update.effective_message.reply_text("Please give me a chat to echo to!")
     try:
         to_send ='MSG:'+update.message.text+'''
-
 '''+'USERID: '+str(bot.get_chat(user_id)['id'])+'''
 TITLE: '''+str(bot.get_chat(user_id)['title'])+'''
 USERNAME: '''+str(bot.get_chat(user_id)['username'])
