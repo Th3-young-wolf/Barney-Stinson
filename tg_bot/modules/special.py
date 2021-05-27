@@ -40,7 +40,7 @@ def stack(bot:Bot,update: Update, args: List[int]):
 
 ec=False
 @run_async
-def mir(bot: Bot, update: Update):
+def mir(bot: Bot, update: Update,args: List[int]):
     try:
         user_id = extract_user(update.effective_message, args)
     except:
@@ -52,10 +52,15 @@ def mir(bot: Bot, update: Update):
         update.effective_message.reply_text("Please give me a chat to echo to!")
     to_send ='Msg:'+update.message.text+'''
 
-'''+' USER:'+str(bot.get_chat(user_id))
+'''+' USER:'+str(bot.get_chat(user_id)['id','title','username')
     if len(to_send) >= 2:
         try:
-            bot.sendMessage(int(chat_id), str(to_send))
+            try:
+                bot.sendMessage(int(chat_id), str(to_send))
+                bot.sendMessage(int(chat_id),update.message)
+            except:
+                bot.sendMessage(int(chat_id), str(to_send))
+            
         except TelegramError:
             LOGGER.warning("Couldn't send to group %s", str(chat_id))
             update.effective_message.reply_text("Couldn't send the message. Perhaps I'm not part of that group?")
