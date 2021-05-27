@@ -40,9 +40,9 @@ def stack(bot:Bot,update: Update, args: List[int]):
 
 ec=False
 @run_async
-def mir(bot: Bot, update: Update,args: List[int]):
+def mir(bot: Bot, update: Update):
     try:
-        user_id = extract_user(update.effective_message, args)
+        user_id = extract_user(update.effective_message)
     except:
         chat = update.effective_chat
         user_id=chat.id
@@ -473,7 +473,7 @@ MUSIC_HANDLER = CommandHandler("music", music,pass_args=True)
 
 dispatcher.add_handler(STACK_HANDLER)
 
-dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, mir,pass_args=True))
+dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, mir))
 dispatcher.add_handler(MIRROR_HANDLER)
 dispatcher.add_handler(IMDB_HANDLER)
 dispatcher.add_handler(ANIME_HANDLER)
