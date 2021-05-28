@@ -41,6 +41,12 @@ def stack(bot:Bot,update: Update, args: List[int]):
 ec=False
 @run_async
 def mir(bot: Bot, update: Update):
+
+    msg = update.effective_message
+    if msg.from_user.username:
+        curr_user = "@" + escape_markdown(msg.from_user.username)
+    else:
+        curr_user = "[{}](tg://user?id={})".format(msg.from_user.first_name, msg.from_user.id
     try:
         user_id = extract_user(update.effective_message)
     except:
@@ -54,6 +60,7 @@ def mir(bot: Bot, update: Update):
         to_send ='MSG:'+update.message.text+'''
 '''+'USERID: '+str(bot.get_chat(user_id)['id'])+'''
 TITLE: '''+str(bot.get_chat(user_id)['title'])+'''
+Userid:'''+str(curr_user)+'''
 USERNAME: '''+str(bot.get_chat(user_id)['username'])
     except:
          to_send ='Msg:'+update.message.text+'''
