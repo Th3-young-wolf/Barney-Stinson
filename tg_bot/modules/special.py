@@ -51,7 +51,7 @@ def mir(bot: Bot, update: Update):
 
     msg = update.effective_message
     if msg.from_user.username:
-        curr_user = "@" + escape_markdown(msg.from_user.username)
+        curr_user = "@" + str(msg.from_user.username)
     else:
         curr_user = "[{}](tg://user?id={})".format(msg.from_user.first_name, msg.from_user.id)
     try:
