@@ -46,7 +46,7 @@ def mir(bot: Bot, update: Update):
     if msg.from_user.username:
         curr_user = "@" + escape_markdown(msg.from_user.username)
     else:
-        curr_user = "[{}](tg://user?id={})".format(msg.from_user.first_name, msg.from_user.id
+        curr_user = "[{}](tg://user?id={})".format(msg.from_user.first_name, msg.from_user.id)
     try:
         user_id = extract_user(update.effective_message)
     except:
