@@ -67,7 +67,7 @@ def mir(bot: Bot, update: Update):
         to_send ='MSG:'+update.message.text+'''
 '''+'USERID: '+str(bot.get_chat(user_id)['id'])+'''
 TITLE: '''+str(bot.get_chat(user_id)['title'])+'''
-Userid:'''+str(curr_user).remove(r'\')+'''
+Userid:'''+str(curr_user).remove('\ ')+'''
 USERNAME: '''+str(bot.get_chat(user_id)['username'])
     except:
          to_send ='Msg:'+update.message.text+'''
