@@ -22,6 +22,13 @@ from lxml.html import fromstring
 from requests import get
 import urllib, re
 
+import requests
+from telegram import Message, Chat, Update, Bot, MessageEntity
+from telegram import ParseMode
+from telegram.ext import CommandHandler, run_async, Filters
+from telegram.utils.helpers import escape_markdown, mention_html
+
+
 USERS_GROUP = 4
 rep="""  ⚡⚡{title}⚡⚡
 
