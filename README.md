@@ -28,6 +28,8 @@ I would like to thank the developers of marie bot ,as it's the skeleton of this 
 /anime - anime search via bot
 /duck - private search via duckduckgo
 /cricket - live cricket score
+/slap - to mock your friends
+/ph - Exclusive PH Search(#still on development)
 ```
 
 ## Cirus Lab
