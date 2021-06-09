@@ -1,4 +1,4 @@
-## Joey Tribbiani V.2 Bot
+## Crystal :Cirus Lab
 
 An Enhanced Telegram Grp Management Bot By Cirus Lab
 ![plot](https://github.com/Fal3n-4ngel/Joey-Tribbiani/blob/master/IMG_20210217_220529.jpg)
