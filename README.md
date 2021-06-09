@@ -1,8 +1,10 @@
 ## Crystal :Cirus Lab
-
-An Enhanced Telegram Grp Management Bot By Cirus Lab
 ![plot](https://github.com/Fal3n-4ngel/Joey-Tribbiani/blob/master/IMG_20210608_115450_622.jpg
 )
+
+An Enhanced Telegram Grp Management Bot By Cirus Lab
+
+
 # Note
 This is an GNU licenced Source Code , Editing or copying of this file must be with the consent of the Creator
 Github : CIRUS LAB @ fal3n_4ngel
